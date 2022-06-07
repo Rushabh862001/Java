@@ -1,0 +1,77 @@
+mysql> create database vrushabh;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use vrushabh;
+Database changed
+mysql>  create table Person(
+    ->     -> id int primary key not null,
+    ->     -> first_name varchar(20) not null,
+    ->     -> last_name varchar(20) not null,
+    ->     -> address varchar(20) not null,
+    ->     -> city varchar(20) not null
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> id int primary key not null,
+    -> first_name varchar(20) not null,
+    -> l' at line 2
+mysql>  create table Person(
+    ->     -> id int primary key not null,
+    ->     -> first_name varchar(20) not null,
+    ->     -> last_name varchar(20) not null,
+    ->     -> address varchar(20) not null,
+    ->     -> city varchar(20) not null
+    ->
+    ->
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> id int primary key not null,
+    -> first_name varchar(20) not null,
+    -> l' at line 2
+mysql> create table person(
+    -> person_id int primary key not null,
+    -> first_name varchar(20) not null,
+    -> last_name varchar(20) not null,
+    -> address varchar(20) not null,
+    -> city varchar(20) not null
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc person;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| person_id  | int(11)     | NO   | PRI | NULL    |       |
+| first_name | varchar(20) | NO   |     | NULL    |       |
+| last_name  | varchar(20) | NO   |     | NULL    |       |
+| address    | varchar(20) | NO   |     | NULL    |       |
+| city       | varchar(20) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into person values(1,'Rushabh','jadhav','parel','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values(2,'vinayak','suryawanshi','ghatkopar','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values(3,'Suraj','suryawanshi','bhandup','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values(4,'tejas','kute','ghatkopar','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into person values(5,'rupesh','patil','mulund','thane');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from person;
++-----------+------------+-------------+-----------+--------+
+| person_id | first_name | last_name   | address   | city   |
++-----------+------------+-------------+-----------+--------+
+|         1 | Rushabh    | jadhav      | parel     | mumbai |
+|         2 | vinayak    | suryawanshi | ghatkopar | mumbai |
+|         3 | Suraj      | suryawanshi | bhandup   | mumbai |
+|         4 | tejas      | kute        | ghatkopar | mumbai |
+|         5 | rupesh     | patil       | mulund    | thane  |
++-----------+------------+-------------+-----------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
